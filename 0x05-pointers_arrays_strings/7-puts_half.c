@@ -1,23 +1,25 @@
 #include "main.h"
 /**
- * rev_string - reverses a string
- * @s: imput string
- * Return: string in rev
+ * puts_half - prints half of string
+ * @str:imput
+ * return: half the imput
  */
-void rev_string(char *s)
+void puts_half(char *str)
 {
-	char rev = s[0];
-	int counter = 0;
-	int i;
-
-	while (s[counter] != '\0')
-		counter++;
-	for (i = 0; i < counter; i++)
+	int len = 0;
+	while (*str != '\0')
 	{
-		counter--;
-		rev = s[i];
-		s[i] = s[counter];
-		s[counter] = rev;
+		len++;
+		str++;
 	}
 
+	str -=  (len / 2);
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str++;
+	}
+
+	_putchar('\n');
 }
+
