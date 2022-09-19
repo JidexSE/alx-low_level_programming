@@ -1,18 +1,11 @@
 #include "main.h"
 /**
-
-
-* rev_string - this reserve a string
-
-
-* @s: pointer
-
-
-*/
-
-
+ * Description: rev_string - this reserve a string
+ * @s: pointer
+ *
+ *
+ */
 void rev_string(char *s)
-
 
 {
 
