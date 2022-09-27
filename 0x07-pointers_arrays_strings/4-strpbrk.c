@@ -1,31 +1,33 @@
 #include "main.h"
 
 /**
- * *_strspn - return the number of occurent of a string
- * @s: string to check
- * @accept: character to match
- * Return: int
+ * _strpbrk - Search a string for any of a set of bytes.
+ * @s: string
+ * @accept: string to match
+ * Return: Pointer to the byte in `s` that matches one of the bytes in `accept`
+ * or NULL if no such byte is found.
  */
 
-
-unsigned int _strspn(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-	int i, j, cmpt = 0;
+	int i, j;
+	char *p;
 
-	for (i = 0; s[i] >= '\0'; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		for (j = 0; accept[j] > '\0'; j++)
+		j = 0;
+		while (accept[j] != '\0')
 		{
-			if (s[i] == accept[j])
+			if (accept[j] == s[i])
 			{
-				cmpt++;
-				break;
+				p = &s[i];
+				return (p);
 			}
+			j++;
 		}
-		if (accept[j] == '\0')
-		{
-			break;
-		}
+		i++;
 	}
-	return (cmpt);
+
+	return (0);
 }
