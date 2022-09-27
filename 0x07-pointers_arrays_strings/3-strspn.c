@@ -1,29 +1,31 @@
 #include "main.h"
 
 /**
- * _strspn - function to match strings from accept with part of s
- * @s: larger string
- * @accept: smaller string
- * Return: an integer number that counts from 1 to where accept stops
+ * *_strspn - return the number of occurent of a string
+ * @s: string to check
+ * @accept: character to match
+ * Return: int
  */
+
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int counter = 0;
+	int i, j, cmpt = 0;
 
-	for (i = 0; s[i] != '\0'; i++) /*check through the whole string*/
+	for (i = 0; s[i] >= '\0'; i++)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		for (j = 0; accept[j] > '\0'; j++)
 		{
-			if (s[i] == accept[j]) /* if the strings are equal at i and j*/
+			if (s[i] == accept[j])
 			{
-				counter += 1; /* add 1 to counter */
+				cmpt++;
+				break;
 			}
 		}
-		if (s[i] == '\0') /*takes care of an empty accept string, I think*/
-			return (counter);
+		if (accept[j] == '\0')
+		{
+			break;
+		}
 	}
-	return (counter);
+	return (cmpt);
 }
