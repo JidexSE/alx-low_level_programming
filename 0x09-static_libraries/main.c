@@ -2,6 +2,6 @@
 
 int main(void)
 {
-    _puts("\"you are you, don't ever lose yourself\"\n\t- Urek mazino");
+    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
     return (0);
 }
